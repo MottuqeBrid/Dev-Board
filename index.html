@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev-Board</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-[#F4F7FF]">
+    <header class="container mx-auto w-11/12 mt-4">
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+          <div class="flex gap-4 items-center">
+            <img class="w-12" src="./assets/logo.png" alt="" />
+            <a class="btn btn-ghost text-xl"
+              >Dev<span class="font-bold">Board</span></a
+            >
+          </div>
+        </div>
+        <div class="flex-none">
+          <div class="flex gap-3 items-center">
+            <div class="flex gap-2 bg-[#F4F7FF] px-4 py-3 rounded-full">
+              <img src="./assets/checkbox.png" alt="" />
+              <p id="taskDone">23</p>
+            </div>
+            <button onclick="handelChangeColor()">
+              <img
+                id="changeColor"
+                class="w-8"
+                src="./assets/theme-btn.png"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container mx-auto w-11/12 mt-5 rounded-2xl">
+      <div class="md:flex gap-4">
+        <div class="md:w-9/12 bg-white p-5">
+          <div class="grid grid-cols-4 gap-3">
+            <div class="flex justify-between p-3 bg-[#F4F7FF]">
+              <div class="flex items-center justify-center">
+                <img src="./assets/checkbox.png" alt="" />
+              </div>
+              <div class="">
+                <small>Task Assigned </small>
+                <h2 id="taskAssigned" class="text-xl font-bold">05</h2>
+              </div>
+            </div>
+            <div
+              id="discoverBtn"
+              class="flex justify-between col-span-2 p-3 bg-linear-to-r from-[#3752FD] to-[#9BA8F8] rounded-md cursor-pointer"
+            >
+              <div class="flex items-center justify-start">
+                <img class="w-10 ml-2" src="./assets/board.png" alt="" />
+              </div>
+              <div class="flex items-center w-[60%] mr-[20%]">
+                <p class="text-white font-medium">
+                  Discover Something New Today!
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-between gap-3 p-3 bg-[#F4F7FF]">
+              <div class="flex items-center justify-center">
+                <img src="./assets/checkbox.png" alt="" />
+              </div>
+              <div class="">
+                <p id="currentDate" class="font-semibold text-xl">
+                  Wed ,<br />Jul 28 2025
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="cards" class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5">
+            <!-- cards start -->
+          </div>
+        </div>
+        <div class="md:w-4/12 bg-white p-5">
+          <div class="flex items-center justify-center flex-col gap-3">
+            <div class="flex gap-2">
+              <img src="./assets/activity.png" alt="" />
+              <p>Active Log</p>
+            </div>
+            <button id="clearLog" class="btn btn-primary">Clear Log</button>
+          </div>
+          <div id="activeLog" class=""></div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/task.js"></script>
+  </body>
+</html>
