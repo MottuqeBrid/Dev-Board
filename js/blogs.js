@@ -47,12 +47,12 @@ function handelQna(questions) {
   for (const que of questions) {
     const div = document.createElement("div");
     div.innerHTML = `
-    <details class="collapse bg-base-100 border-base-300 border">
-  <summary class="collapse-title font-bold">${que.question}</summary>
-  <div class="collapse-content text-sm">
-    ${que.ans}
+  <div class="card card-border bg-base-100 w-full">
+    <div class="card-body">
+      <h2 class="card-title">${que.question}</h2>
+      <p>${que.ans}</p>
+    </div>
   </div>
-</details>
     `;
     qna.appendChild(div);
   }

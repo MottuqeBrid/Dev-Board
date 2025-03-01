@@ -154,23 +154,31 @@ cards.addEventListener("click", function (e) {
       cards.innerHTML = "";
       taskCard(tasks);
       activeTaskCard(activeLogTasks);
-    }
-  }
 
-  taskNumber = 0;
-  for (const task of tasks) {
-    if (!task.completed) {
-      taskNumber++;
+      taskNumber = 0;
+      for (const task of tasks) {
+        if (!task.completed) {
+          taskNumber++;
+        }
+      }
+      taskAssigned.innerText = taskNumber;
+      if (Number.parseInt(taskAssigned.innerText) === 0) {
+        alert("Board updated successfully");
+        alert("congratulation! You have completed all the current task");
+      } else {
+        alert("Board updated successfully");
+      }
+      taskDone.innerText = Number.parseInt(taskDone.innerText) + 1;
     }
   }
-  taskAssigned.innerText = taskNumber;
-  console.log(taskDone.innerText);
-  taskDone.innerText = Number.parseInt(taskDone.innerText) + 1;
 });
 
 function activeTaskCard(tasks) {
   for (const task of tasks) {
     const p = document.createElement("p");
+    p.classList.add("bg-[#F4F7FF]");
+    p.classList.add("p-2");
+    p.classList.add("rounded-lg");
     p.textContent = `You have Complete The Task ${task.title} at ${task.time} `;
     activeLog.appendChild(p);
   }
@@ -203,6 +211,6 @@ function currentDate() {
 }
 
 function handelChangeColor() {
-  const randomColor = colors[Math.floor(Math.random() * colors.length) + 1];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
   document.body.style.backgroundColor = randomColor;
 }
